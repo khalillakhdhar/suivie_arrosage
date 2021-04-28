@@ -23,7 +23,7 @@
                             <select id="grade" required [(ngModel)]="user.grade" class="form-control" name="login"><option value="admin">admin</option><option value="user">Utilisateur</option></select>
                       
                             <input type="password" id="password" class="form-control" required [(ngModel)]="user.mdp"  name="mdp" placeholder="mot de passe">
-                            <input type="submit" [disabled]="myform.invalid"  (click)="adduser()"  class="btn btn-primary" value="Inscription">
+                            <input type="submit" [disabled]="myform.invalid"  (click)="adduser()"  class="btn btn-primary" value="Ajouter">
                           </form>
                      </div>
                      <div class="modal-footer">
