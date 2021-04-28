@@ -3,4 +3,5 @@ export class Parametres {
     mode:string;
     debut:string;
     duree:string;
+    repetition:string;
 }
