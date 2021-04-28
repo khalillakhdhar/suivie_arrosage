@@ -20,6 +20,7 @@
                             <input type="text" id="tel" #tel="ngModel" required pattern="[0-9 +]{8,20}" required  [(ngModel)]="user.tel" class="form-control" name="tel" placeholder="telephone">
                             <input type="text" id="adresse" required [(ngModel)]="user.adresse" class="form-control" name="adresse" placeholder="Adresse">
                             <input type="text" id="login" required [(ngModel)]="user.login" class="form-control" name="login" placeholder="login">
+                            <select id="grade" required [(ngModel)]="user.grade" class="form-control" name="login"><option value="admin">admin</option><option value="user">Utilisateur</option></select>
                       
                             <input type="password" id="password" class="form-control" required [(ngModel)]="user.mdp"  name="mdp" placeholder="mot de passe">
                             <input type="submit" [disabled]="myform.invalid"  (click)="adduser()"  class="btn btn-primary" value="Inscription">
