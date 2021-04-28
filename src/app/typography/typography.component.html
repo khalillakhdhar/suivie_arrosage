@@ -2,95 +2,80 @@
   <div class="container-fluid">
     <div class="card">
         <div class="card-header card-header-danger">
-            <h4 class="card-title">Material Dashboard Heading</h4>
-            <p class="card-category">Created using Roboto Font Family</p>
+            <h4 class="card-title">Paramétre d'arrosage</h4>
+            <p class="card-category">Choisissez la mode et le début</p>
         </div>
         <div class="card-body">
             <div id="typography">
                 <div class="card-title">
-                    <h2>Typography</h2>
+                    <h2>Paramétres</h2>
+                    
                 </div>
-                <div class="row">
-                    <div class="tim-typo">
-                        <h1>
-                            <span class="tim-note">Header 1</span>The Life of Material Dashboard </h1>
+                <div class="container">
+                    <div class="row">
+                      <div class="col-sm-3">
+                      </div>
+                      <div class="col-sm">
+                        <table class="table table-borderless">
+                            <tr><td colspan="2" align="center"><h2>Paramétres</h2></td></tr>
+                            <tr><td>Mode:</td><td><select   name="mode" class="form-control" [(ngModel)]="parametre.mode"><option selected="selectionner">selectionner</option><option value="manuelle">Manuelle</option><option value="automatique">automatique</option></select></td></tr>
+                            <tr><td>Répétition:</td><td><select   name="rep" class="form-control" [(ngModel)]="parametre.repetition"><option selected="aucune">aucune</option><option selected="quotidienne">quotidienne</option></select></td></tr>
+                            <tr><td>debut:</td><td><input type="datetime-local"   name="date" class="form-control" [(ngModel)]="parametre.debut"></td></tr>
+                            <tr><td>duree(minutes):</td><td><input type="number"   name="duree" class="form-control" [(ngModel)]="parametre.duree"></td></tr>
+                            <tr><td colspan="2" align="center"><button (click)="add()" class="btn btn-primary">ajouter</button></td></tr>
+        
+                        </table>                      </div>
+                      <div class="col-sm-3">
+                      </div>
                     </div>
-                    <div class="tim-typo">
-                        <h2>
-                            <span class="tim-note">Header 2</span>The Life of Material Dashboard</h2>
-                    </div>
-                    <div class="tim-typo">
-                        <h3>
-                            <span class="tim-note">Header 3</span>The Life of Material Dashboard</h3>
-                    </div>
-                    <div class="tim-typo">
-                        <h4>
-                            <span class="tim-note">Header 4</span>The Life of Material Dashboard</h4>
-                    </div>
-                    <div class="tim-typo">
-                        <h5>
-                            <span class="tim-note">Header 5</span>The Life of Material Dashboard</h5>
-                    </div>
-                    <div class="tim-typo">
-                        <h6>
-                            <span class="tim-note">Header 6</span>The Life of Material Dashboard</h6>
-                    </div>
-                    <div class="tim-typo">
-                        <p>
-                            <span class="tim-note">Paragraph</span>
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Quote</span>
-                        <blockquote class="blockquote">
-                            <p>
-                                I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
-                            </p>
-                            <small>
-                                Kanye West, Musician
-                            </small>
-                        </blockquote>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Muted Text</span>
-                        <p class="text-muted">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                        </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Primary Text</span>
-                        <p class="text-primary">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Info Text</span>
-                        <p class="text-info">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Success Text</span>
-                        <p class="text-success">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Warning Text</span>
-                        <p class="text-warning">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                        </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Danger Text</span>
-                        <p class="text-danger">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <h2>
-                            <span class="tim-note">Small Tag</span>
-                            Header with small subtitle
-                            <br>
-                            <small>Use "small" tag for the headers</small>
-                        </h2>
-                    </div>
+                  </div>
+               
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Mode
+                            </th>
+                            <th>
+                                Début
+                            </th>
+                            <th>
+                                Durée
+                            </th>
+                            <th>
+                                répétition
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let us of parametres">
+                                <td>
+                                    {{us.id}}
+                                </td>
+                                <td>
+                                    {{us.mode}}
+                                </td>
+                                <td>
+                                    {{us.debut}}
+                                </td>
+                                <td>
+                                    {{us.duree}}
+                                </td>
+                                <td>
+                                    {{us.repetition}}
+                                </td>
+                                <td class="text-primary">
+                                <button class="btn btn-danger" (click)="supprimer(us.id)">Supprimer</button>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
