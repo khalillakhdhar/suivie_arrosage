@@ -1,0 +1,95 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+       <div align="center">     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Ajouter un utilisateur
+               </button>
+            </div>     
+               <!-- Modal -->
+               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                     </div>
+                     <div class="modal-body">
+                        <form #myform="ngForm">
+                            <input type="text"  #nom="ngModel" required pattern="[A-Za-z éè]{3,30}"  [(ngModel)]="user.nom"  id="nom" class="form-control" name="nom" placeholder="nom">
+                            <input type="text" id="tel" #tel="ngModel" required pattern="[0-9 +]{8,20}" required  [(ngModel)]="user.tel" class="form-control" name="tel" placeholder="telephone">
+                            <input type="text" id="adresse" required [(ngModel)]="user.adresse" class="form-control" name="adresse" placeholder="Adresse">
+                            <input type="text" id="login" required [(ngModel)]="user.login" class="form-control" name="login" placeholder="login">
+                      
+                            <input type="password" id="password" class="form-control" required [(ngModel)]="user.mdp"  name="mdp" placeholder="mot de passe">
+                            <input type="submit" [disabled]="myform.invalid"  (click)="adduser()"  class="btn btn-primary" value="Inscription">
+                          </form>
+                     </div>
+                     <div class="modal-footer">
+
+                     </div>
+                   </div>
+                 </div>
+               </div>
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Liste des utilisateurs</h4>
+                      <p class="card-category">Gérer les utilisateurs</p>
+                  </div>
+                  <!-- Button trigger modal -->
+
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                      Nom
+                                  </th>
+                                  <th>
+                                      Téléphone
+                                  </th>
+                                  <th>
+                                      Adresse
+                                  </th>
+                                  <th>
+                                      Grade
+                                  </th>
+                                  <th>
+                                      Action
+                                  </th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let us of users">
+                                      <td>
+                                          {{us.id}}
+                                      </td>
+                                      <td>
+                                          {{us.nom}}
+                                      </td>
+                                      <td>
+                                          {{us.tel}}
+                                      </td>
+                                      <td>
+                                          {{us.adresse}}
+                                      </td>
+                                      <td>
+                                          {{us.grade}}
+                                      </td>
+                                      <td class="text-primary">
+                                      <button class="btn btn-danger" (click)="supprimer(us.id)">Supprimer</button>
+                                      </td>
+                                  </tr>
+                                
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        
+      </div>
+  </div>
+</div>

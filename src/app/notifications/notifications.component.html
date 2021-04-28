@@ -1,0 +1,62 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="card">
+          <div class="card-header card-header-danger">
+              <h3 class="card-title">Notifications</h3>
+              <p class="card-category">Handcrafted by our friend
+                  <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the
+                  <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a>
+              </p>
+          </div>
+          <div class="card-body">
+              <div class="row">
+                  <div class="col-md-6">
+                      <h4 class="card-title">Suivie d'eau</h4>
+                      <div >
+                          <span><iframe src="https://thingspeak.com/channels/1360489/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" width="100%" height="300"></iframe></span>
+                      </div>
+                
+                    
+                   
+                  </div>
+                  <div class="col-md-6">
+                      <h4 class="card-title">Suivie des conditions</h4>
+                      <div >
+               
+                          <span><iframe src="https://thingspeak.com/channels/1360489/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" width="100%" height="300"></iframe></span>
+
+                      </div>
+                   
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <div class="places-buttons">
+                  <div class="row">
+                      <div class="col-md-6 ml-auto mr-auto text-center">
+                          <h4 class="card-title">
+Humidité et température                              <p class="category"><iframe src="https://thingspeak.com/channels/1360489/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15" width="100%" height="300"></iframe></p>
+                          </h4>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','left')">Démarrer l'arrosage</button>
+                              </div>
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','center')">Arrêt du systéme</button>
+                              </div>
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','right')">Mode automatiques</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
