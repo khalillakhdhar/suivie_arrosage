@@ -22,7 +22,15 @@
                             <tr><td>Répétition:</td><td><select   name="rep" class="form-control" [(ngModel)]="parametre.repetition"><option selected="aucune">aucune</option><option selected="quotidienne">quotidienne</option></select></td></tr>
                             <tr><td>debut:</td><td><input type="datetime-local"   name="date" class="form-control" [(ngModel)]="parametre.debut"></td></tr>
                             <tr><td>duree(minutes):</td><td><input type="number"   name="duree" class="form-control" [(ngModel)]="parametre.duree"></td></tr>
-                            <tr><td colspan="2" align="center"><button (click)="add()" class="btn btn-primary">ajouter</button></td></tr>
+                            <tr><td colspan="2" align="center">
+                                <div *ngIf="!selected"><button (click)="add()" class="btn btn-primary">ajouter</button>
+                            </div>
+                                <div *ngIf="selected"><button (click)="update()" class="btn btn-success">Modifer</button>&nbsp;&nbsp;
+                                    <button (click)="unselect()" class="btn btn-warning">Annuler</button>
+                            </div>
+                            
+                            
+                            </td></tr>
         
                         </table>                      </div>
                       <div class="col-sm-3">
