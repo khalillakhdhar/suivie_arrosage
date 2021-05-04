@@ -49,10 +49,27 @@ selected=false;
   if(confirm("vous voulez supprimer cette configuration?"))
   this.parametresService.delete_Parameters(id);
 }
+select(current)
+{
+  this.parametre=current;
+  this.selected=true;
+}
+unselect()
+{
+  this.parametre=new Parametres();
+  this.selected=false;
+}
 add()
 {
   let pr =Object.assign({},this.parametre);
   this.parametresService.create_NewParameters(pr);
+  this.parametre=new Parametres();
+
+}
+update()
+{
+  let pr =Object.assign({},this.parametre);
+  this.parametresService.update_Parameters(this.parametre.id,pr);
   this.parametre=new Parametres();
 
 }
