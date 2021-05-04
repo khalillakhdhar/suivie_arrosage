@@ -2,7 +2,7 @@
   <div class="container-fluid">
       <div class="row">
           <div class="col-md-12">
-       <div align="center">     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+       <div align="center">     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Ajouter un utilisateur
                </button>
             </div>     
@@ -23,7 +23,7 @@
                             <select id="grade" required [(ngModel)]="user.grade" class="form-control" name="login"><option value="admin">admin</option><option value="user">Utilisateur</option></select>
                       
                             <input type="password" id="password" class="form-control" required [(ngModel)]="user.mdp"  name="mdp" placeholder="mot de passe">
-                            <input type="submit" [disabled]="myform.invalid"  (click)="adduser()"  class="btn btn-primary" value="Ajouter">
+                            <button type="submit" [disabled]="myform.invalid"  (click)="adduser()"  class="btn btn-primary" value="Ajouter">Ajouter</button>
                           </form>
                      </div>
                      <div class="modal-footer">
@@ -80,7 +80,7 @@
                                           {{us.grade}}
                                       </td>
                                       <td class="text-primary">
-                                      <button class="btn btn-danger" (click)="supprimer(us.id)">Supprimer</button>
+                                      <button class="btn btn-outline-danger" (click)="supprimer(us.id)"><i class="material-icons">delete</i></button>
                                       </td>
                                   </tr>
                                 
