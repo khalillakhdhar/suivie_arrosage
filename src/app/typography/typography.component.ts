@@ -10,6 +10,7 @@ import { Parameterservice } from '../services/parametres.service';
 export class TypographyComponent implements OnInit {
 parametre:Parametres;
 parametres:Parametres[];
+selected=false;
   constructor(private parametresService:Parameterservice) { 
 
   }
