@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Reclamation } from 'app/classes/reclamation';
 
 @Component({
   selector: 'app-icons',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icons.component.css']
 })
 export class IconsComponent implements OnInit {
-
+reclamation:Reclamation;
+reclamations:Reclamation[];
   constructor() { }
 
   ngOnInit() {
+    this.reclamation=new Reclamation();
   }
 
 }
