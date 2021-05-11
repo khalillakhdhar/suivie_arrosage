@@ -10,10 +10,23 @@ import { UserService } from 'app/services/user.service';
 export class DashboardComponent implements OnInit {
   user:Utilisateur;
   users:Utilisateur[];
+  nbs=0;
+  nbu=0;
+  nbo=0;
   constructor(private userService:UserService) { }
 
   ngOnInit() {
       this.read();
+      this.calculate();
+  }
+  calculate()
+  {
+    for (let us of this.users)
+    {
+      this.nbu++;
+      if(us.grade=="admin")
+      this.nbs++;
+    }
   }
   read()
   {
@@ -34,6 +47,12 @@ export class DashboardComponent implements OnInit {
   
         };
       });
+      for (let us of this.users)
+      {
+        this.nbu++;
+        if(us.grade=="admin")
+        this.nbs++;
+      }
       console.log(this.users);
   
     });
