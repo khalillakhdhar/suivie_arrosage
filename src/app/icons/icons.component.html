@@ -1,25 +1,88 @@
-
 <div class="main-content">
-  <div class="container-fluid">
-      <div class="card card-plain">
+    <div class="container-fluid">
+      <div class="card">
           <div class="card-header card-header-danger">
-              <h4 class="card-title">Material Design Icons</h4>
-              <p class="card-category">Handcrafted by our friends from
-                  <a target="_blank" href="https://design.google.com/icons/">Google</a>
-              </p>
+              <h4 class="card-title">Reclamation de probléme</h4>
+              <p class="card-category">Choisissez la type et le début</p>
           </div>
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="card-body">
-                  
-                      <div class="col-md-12 d-none d-sm-block d-md-block d-lg-none d-block d-sm-none text-center ml-auto mr-auto">
-                          <h5>The icons are visible on Desktop mode inside an iframe. Since the iframe is not working on Mobile and Tablets please visit the icons on their original page on Google. Check the
-                              <a href="https://design.google.com/icons/" target="_blank">Material Icons</a>
-                          </h5>
+          <div class="card-body">
+              <div id="typography">
+                  <div class="card-title">
+                      <h2>Paramétres</h2>
+                      
+                  </div>
+                  <div class="container">
+                      <div class="row">
+                        <div class="col-sm-3">
+                        </div>
+                        <div class="col-sm">
+                          <table class="table table-borderless">
+                              <tr><td colspan="2" align="center"><h2>Paramétres</h2></td></tr>
+                              <tr><td>type:</td><td><select   name="type" class="form-control" [(ngModel)]="reclamation.type"><option selected="selectionner">selectionner</option><option value="manuelle">Manuelle</option><option value="automatique">automatique</option></select></td></tr>
+                              <tr><td>cas:</td><td><select   name="rep" class="form-control" [(ngModel)]="reclamation.cas"><option selected="aucune">aucune</option><option selected="quotidienne">quotidienne</option></select></td></tr>
+                              <tr><td>date:</td><td><input type="datetime-local"   name="date" class="form-control" [(ngModel)]="reclamation.date"></td></tr>
+                              <tr><td colspan="2" align="center">
+                                  <tr><td>texte</td><td><textarea class="form-control"  name="texte" class="form-control" [(ngModel)]="reclamation.texte"></textarea></td></tr>
+                                  <div ><button (click)="add()" class="btn btn-primary">ajouter</button>
+                              </div>
+                                 
+                              
+                              
+                              </td></tr>
+          
+                          </table>                      </div>
+                        <div class="col-sm-3">
+                        </div>
                       </div>
+                    </div>
+                 
+                  <div class="table-responsive">
+                      <table class="table">
+                          <thead class=" text-primary">
+                              <th>
+                                  ID
+                              </th>
+                              <th>
+                                  type
+                              </th>
+                              <th>
+                                  date
+                              </th>
+                              <th>
+                                  texte
+                              </th>
+    
+                              <th>
+                                  Action
+                              </th>
+                          </thead>
+                          <tbody>
+                              <tr *ngFor="let us of reclamations">
+                                  <td>
+                                      {{us.id}}
+                                  </td>
+                                  <td>
+                                      {{us.type}}
+                                  </td>
+                                  <td>
+                                      {{us.date}}
+                                  </td>
+                                  <td>
+                                      {{us.texte}}
+                                  </td>
+                                 
+                                  <td class="text-primary">
+                                  <button class="btn btn-outline-danger" (click)="supprimer(us.id)"><i class="material-icons">delete</i></button>
+                              &nbsp;&nbsp;    <button class="btn btn-outline-success" (click)="select(us)"><i class="material-icons">visibility</i></button>
+                              </td>
+  
+                              </tr>
+                            
+                          </tbody>
+                      </table>
                   </div>
               </div>
           </div>
       </div>
   </div>
-</div>
+  
