@@ -80,38 +80,45 @@
                   </div>
                   <div class="card-body table-responsive">
                       <table class="table table-hover">
-                          <thead class="text-warning">
-                              <th>ID</th>
-                              <th>Name</th>
-                              <th>Salary</th>
-                              <th>Country</th>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>Dakota Rice</td>
-                                  <td>$36,738</td>
-                                  <td>Niger</td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>Minerva Hooper</td>
-                                  <td>$23,789</td>
-                                  <td>Curaçao</td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>Sage Rodriguez</td>
-                                  <td>$56,142</td>
-                                  <td>Netherlands</td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>Philip Chaney</td>
-                                  <td>$38,735</td>
-                                  <td>Korea, South</td>
-                              </tr>
-                          </tbody>
+                        <thead class=" text-warning">
+                            <th>
+                                ID
+                            </th>
+                            <th>
+                                Nom
+                            </th>
+                            <th>
+                                Téléphone
+                            </th>
+                            <th>
+                                Adresse
+                            </th>
+                            <th>
+                                Grade
+                            </th>
+                         
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let us of users">
+                                <td>
+                                    {{us.id}}
+                                </td>
+                                <td>
+                                    {{us.nom}}
+                                </td>
+                                <td>
+                                    {{us.tel}}
+                                </td>
+                                <td>
+                                    {{us.adresse}}
+                                </td>
+                                <td>
+                                    {{us.grade}}
+                                </td>
+                               
+                            </tr>
+                          
+                        </tbody>
                       </table>
                   </div>
               </div>
