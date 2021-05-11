@@ -14,5 +14,6 @@ reclamations:Reclamation[];
   ngOnInit() {
     this.reclamation=new Reclamation();
   }
-
+add()
+{}
 }
