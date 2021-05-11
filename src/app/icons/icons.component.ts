@@ -14,6 +14,7 @@ reclamations:Reclamation[];
 
   ngOnInit() {
     this.reclamation=new Reclamation();
+    this.reclamation.type="selectionner";
   }
 add()
 {
