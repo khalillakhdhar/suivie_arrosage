@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   constructor(private userService:UserService) { }
 
   ngOnInit() {
-      
+      this.read();
   }
   read()
   {
