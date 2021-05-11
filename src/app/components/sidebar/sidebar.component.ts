@@ -12,6 +12,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/profile', title: 'Profile',  icon:'person', class: '' },
     { path: '/utilisateur', title: 'utilisateur',  icon:'persons', class: '' },
     { path: '/parametres', title: 'parametres',  icon:'library_books', class: '' },
+    { path: '/reclamation', title: 'reclamation',  icon:'library_books', class: '' },
     { path: '/supervision', title: 'supervision',  icon:'notifications', class: '' },
     { path: '/', title: 'Déconnexion',  icon:'unarchive', class: 'active-pro' },
 ];
