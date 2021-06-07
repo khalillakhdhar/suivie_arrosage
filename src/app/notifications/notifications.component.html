@@ -43,13 +43,13 @@ Humidité et température                              <p class="category"><ifra
                       <div class="col-lg-8 col-md-10 ml-auto mr-auto">
                           <div class="row">
                               <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','left')">Démarrer l'arrosage</button>
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','left','impossible')">Démarrer l'arrosage</button>
                               </div>
                               <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','center')">Arrêt du systéme</button>
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','center','arrêt')">Arrêt du systéme</button>
                               </div>
                               <div class="col-md-4">
-                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','right')">Mode automatiques</button>
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','right','automatique')">Mode automatiques</button>
                               </div>
                           </div>
                       </div>

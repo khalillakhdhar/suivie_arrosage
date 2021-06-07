@@ -8,14 +8,14 @@ declare var $: any;
 export class NotificationsComponent implements OnInit {
 
   constructor() { }
-  showNotification(from, align){
+  showNotification(from, align,value){
       const type = ['','info','success','warning','danger'];
 
       const color = Math.floor((Math.random() * 4) + 1);
 
       $.notify({
           icon: "notifications",
-          message: "Démarrage de l'action</b> - changement de mode."
+          message: "Démarrage de l'action</b> - changement de mode."+value
 
       },{
           type: type[color],
